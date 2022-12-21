@@ -13,8 +13,8 @@ class Store {
     });
   }
 
-  getData = async (props) => {
-    await axios
+  getData = (props) => {
+    axios
       .get(`https://www.omdbapi.com/?t=${props}&apikey=${API_KEY}`)
       .then((res) =>
         runInAction(() => {
