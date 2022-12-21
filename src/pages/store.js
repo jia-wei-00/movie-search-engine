@@ -4,7 +4,7 @@ import axios from "axios";
 const API_KEY = "49009dbc";
 
 class Store {
-  data = "";
+  data = [];
 
   constructor() {
     makeObservable(this, {
@@ -26,5 +26,3 @@ class Store {
 }
 
 const store = new Store();
-
-export default store;

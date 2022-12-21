@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { observer } from "mobx-react";
-import store from "../store";
+import { inject } from "mobx-react";
 
 const Table = styled.table`
   margin-top: 20px;
@@ -30,7 +29,7 @@ const Container = styled.div`
   }
 `;
 
-function ListTable() {
+function ListTable({ store }) {
   console.log(store.Title, "data");
 
   return (
@@ -49,35 +48,36 @@ function ListTable() {
           <td>
             <Container>
               <div>Title:</div>
-              {store.data.Title}
+              <div>{store.data.Title}</div>
             </Container>
             <Container>
               <div>Rated:</div>
-              {store.data.Rated}
+              <div>{store.data.Rated}</div>
             </Container>
             <Container>
-              <div>Rating:</div> {store.data.imdbRating}
+              <div>Rating:</div> <div>{store.data.imdbRating}</div>
             </Container>
             <Container>
-              <div>Released Date:</div> {store.data.Released}
+              <div>Released Date:</div> <div>{store.data.Released}</div>
             </Container>
             <Container>
-              <div>Duration:</div> {store.data.Runtime}
+              <div>Duration:</div>
+              <div> {store.data.Runtime}</div>
             </Container>
             <Container>
-              <div>Plot:</div> {store.data.Plot}
+              <div>Plot:</div> <div>{store.data.Plot}</div>
             </Container>
             <Container>
-              <div>Director:</div> {store.data.Director}
+              <div>Director:</div> <div>{store.data.Director}</div>
             </Container>
             <Container>
-              <div>Actors:</div> {store.data.Actors}
+              <div>Actors:</div> <div>{store.data.Actors}</div>
             </Container>
             <Container>
-              <div>Language:</div> {store.data.Language}
+              <div>Language:</div> <div>{store.data.Language}</div>
             </Container>
             <Container>
-              <div>Awards:</div> {store.data.Awards}
+              <div>Awards:</div> <div>{store.data.Awards}</div>
             </Container>
           </td>
         </tr>
@@ -86,4 +86,4 @@ function ListTable() {
   );
 }
 
-export default observer(ListTable);
+export default inject("store")(ListTable);

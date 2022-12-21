@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import ListTable from "./Table";
-import { observer } from "mobx-react";
-import store from "./store";
+import { inject } from "mobx-react";
+import { Provider } from "mobx-react";
 
 const Form = styled.form`
   display: grid;
@@ -43,7 +43,7 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
-const Home = () => {
+const Home = ({ store }) => {
   const [value, setValue] = useState("");
 
   const handleSubmit = (e) => {
@@ -66,4 +66,4 @@ const Home = () => {
   );
 };
 
-export default observer(Home);
+export default inject("store")(Home);
