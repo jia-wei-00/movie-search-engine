@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { observer } from "mobx-react";
-import store from "./store";
+import store from "../store";
 
 const Table = styled.table`
   margin-top: 20px;
