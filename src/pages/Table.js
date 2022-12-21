@@ -44,7 +44,7 @@ function ListTable() {
       <tbody>
         <tr>
           <td>
-            <img src={store.data.Poster} alt="image" />
+            <img src={store.data.Poster} alt="poster" />
           </td>
           <td>
             <Container>
